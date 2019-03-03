@@ -157,7 +157,7 @@ $(document).ready(function () {
         method:"GET",
         success:function (all) {
             all_orders_get=JSON.parse(all);
-            //append_all_dishes();
+            append_all_dishes();
         },
         error:function () {
             alert("error");
@@ -174,6 +174,7 @@ $(document).ready(function () {
             type:"JSON",
             data:$("#from_group_"+fromid).serialize(),
             success:function (all) {
+                window.console.log(all);
                 $("#from_group_"+fromid).remove();
             },
             error:function () {
@@ -233,6 +234,5 @@ $(document).ready(function () {
         $("#add_"+removeoption).remove();
     });
     first_time_shows_all();
-
 
 });
